@@ -1,0 +1,23 @@
+AllCops:
+  Excludes:
+    - config/
+    - initializers/*.rb
+    - environments/*.rb
+    - Berksfile
+    - recipes/basic.rb
+    - attributes/*.rb
+    - puma.rb
+
+# Customize rules
+Metrics/LineLength:
+  Max: 95
+
+MethodLength:
+  Max: 35
+
+Metrics/AbcSize:
+   Enabled: false
+
+BlockLength:
+  Max: 70
+
