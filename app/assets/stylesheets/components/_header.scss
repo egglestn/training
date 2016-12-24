@@ -1,0 +1,17 @@
+.navbar {
+  background-color: $primary-purple;
+  color: $white;
+  width: 100%;
+}
+
+.navbar-link {
+  color: $white;
+}
+
+navbar-link:visited {
+  color: $white;
+}
+
+.pull-right {
+  float: right;
+}
