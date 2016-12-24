@@ -1,6 +1,6 @@
 class CreateExercises < ActiveRecord::Migration[5.0]
   def change
-    create_table :exercisesTODODelete do |t|
+    create_table :exercises do |t|
       t.string :name
       t.string :link
       t.string :notes

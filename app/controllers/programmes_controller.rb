@@ -14,13 +14,14 @@ class ProgrammesController < ApplicationController
   end
 
   def edit
+    6.times { exercise = @programme.exercises.build } unless @programme.exercises[0]
   end
 
   def create
     @programme = Programme.new(programme_params)
     @programme.user = current_user
     if @programme.save
-      redirect_to @programme, notice: 'Programme and exercisesTODODelete successfully created.'
+      redirect_to @programme, notice: 'Programme and exercises successfully created.'
     else
       render :new
     end
