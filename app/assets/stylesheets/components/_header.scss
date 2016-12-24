@@ -2,10 +2,24 @@
   background-color: $primary-purple;
   color: $white;
   width: 100%;
+  padding: $padding-default;
+  height: $navbar-height;
 }
 
 .navbar-link {
   color: $white;
+}
+
+.header-title {
+  display: inline-block;
+  font-size: 28px;
+  padding-left: 10px;
+  line-height: 100px;
+}
+
+.header-img {
+  display: inline-block;
+  float: left;
 }
 
 navbar-link:visited {
@@ -14,4 +28,6 @@ navbar-link:visited {
 
 .pull-right {
   float: right;
+  padding: $padding-default;
+  height: $navbar-height;
 }
