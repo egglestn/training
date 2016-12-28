@@ -1,11 +1,36 @@
-<table>
-  <!-- td>< @programme.exercise[0].name %></td>
-  <td>< exercise.link %></td>
-  <td>< exercise.notes %></td>
-  <td>< exercise.reps %></td>
-  <td>< exercise.tempo %></td>
-  <td>< exercise.kit %></td>
-  <td>< exercise.programme %></td -->
+<h1><%= t(".title") %></h1>
+
+<h2><%= @programme.name %> <%= @programme.created_at.strftime("%a %d %b") %></h2>
+
+<table class="exercises">
+  <thead>
+  <tr>
+    <th>
+      <%= label_tag t(".name") %>
+    </th>
+    <th>
+      <%= label_tag t(".link") %>
+    </th>
+    <th class="separate">
+      <%= label_tag t(".reps") %> <%= label_tag t(".tempo") %>
+    </th>
+    <th>
+      <%= label_tag t(".kit") %>
+    </th>
+  </tr>
+  </thead>
+
+  <% @programme.exercises.each do | ex | %>
+    <tr>
+      <td><%= ex.name %></td>
+      <td><%= ex.link %></td>
+      <td><%= ex.reps %> <%= ex.tempo %></td>
+      <td><%= ex.kit %></td>
+    </tr>
+    <tr>
+      <td colspan="4"><%= ex.notes %></td>
+    </tr>
+  <% end %>
 </table>
 
 <%= link_to t(".edit"), edit_programme_path(@programme) %> |

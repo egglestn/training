@@ -40,8 +40,15 @@ en:
       new: "New programme"
       confirm_delete: "Are you sure you want to delete this programme?"
     show:
+      title: "My programme"
       edit: "Edit"
       back: "Back"
+      name: "Exercise name"
+      link: "Link"
+      notes: "Notes"
+      reps: "Reps"
+      tempo: "Tempo"
+      kit: "Kit"
     edit:
       title: "Editing programme"
       show: "Show"
