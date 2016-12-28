@@ -23,3 +23,34 @@ en:
   title: "Optimum function holistic coaching"
   welcome: "Welcome %{name}"
 
+  layouts:
+    application:
+      head_title: "Training"
+  users:
+    login: "Log in"
+    logout: "Log out"
+    profile: "Edit profile"
+    register: "Sign up"
+  programmes:
+    index:
+      title: "My programmes"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new: "New programme"
+      confirm_delete: "Are you sure you want to delete this programme?"
+    show:
+      edit: "Edit"
+      back: "Back"
+
+
+  activerecord:
+    models:
+      user: User
+      programme: Programme
+
+    attributes:
+      user:
+      profile:
+      programme:
+

@@ -1,6 +1,7 @@
 AllCops:
   Excludes:
     - config/
+    - db/*
     - initializers/*.rb
     - environments/*.rb
     - Berksfile
