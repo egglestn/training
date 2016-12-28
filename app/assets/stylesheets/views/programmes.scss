@@ -3,6 +3,10 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .programmes {
+  tr {
+    height: $row-height;
+  }
+
   td {
     font-size: $small-font;
     color: $dark-grey;

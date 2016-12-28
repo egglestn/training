@@ -1,3 +1,17 @@
 .button {
   text-decoration: none;
 }
+
+input[type=submit], .button {
+  background-color: $button-blue;
+  color: $white;
+  border: none;
+  padding: $padding-default;
+  border-radius: 5px;
+}
+
+input[type=text] {
+  padding: $padding-default;
+  border-color: $light-grey;
+  border-width: 2px;
+}

@@ -42,7 +42,18 @@ en:
     show:
       edit: "Edit"
       back: "Back"
-
+    edit:
+      title: "Editing programme"
+      show: "Show"
+      back: "Back"
+    form:
+      title: "Exercises"
+      name: "Exercise name"
+      link: "Link"
+      notes: "Notes"
+      reps: "Reps"
+      tempo: "Tempo"
+      kit: "Kit"
 
   activerecord:
     models:
