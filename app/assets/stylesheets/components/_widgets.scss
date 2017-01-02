@@ -11,7 +11,7 @@ input[type=submit], .button {
   margin-bottom: $padding-large;
 }
 
-input[type=text] {
+input[type=text], select {
   padding: $padding-default;
   border-color: $light-grey;
   border-width: 1px;

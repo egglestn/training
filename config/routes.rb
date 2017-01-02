@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :exercises
   resources :users
 
-  get "/", to: "programmes#index"
-  root to: "programmes#index"
+  get '/', to: 'programmes#index'
+  root to: 'programmes#index'
 end

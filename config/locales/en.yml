@@ -23,6 +23,9 @@ en:
   title: "Optimum function holistic coaching"
   welcome: "Welcome %{name}"
 
+  guest: "User"
+  admin: "Admin"
+
   layouts:
     application:
       head_title: "Training"
@@ -33,6 +36,7 @@ en:
   programmes:
     index:
       title: "My programmes"
+      manage: "Manage programmes"
       show: "Show"
       edit: "Edit"
       destroy: "Destroy"
