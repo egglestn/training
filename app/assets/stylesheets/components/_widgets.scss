@@ -8,10 +8,17 @@ input[type=submit], .button {
   border: none;
   padding: $padding-default;
   border-radius: 5px;
+  margin-bottom: $padding-large;
 }
 
 input[type=text] {
   padding: $padding-default;
   border-color: $light-grey;
-  border-width: 2px;
+  border-width: 1px;
+  border-radius: 5px;
+  margin-bottom: $padding-default;
+}
+
+textarea:focus, input:focus{
+  outline: none;
 }

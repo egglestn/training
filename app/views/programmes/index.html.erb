@@ -1,19 +1,24 @@
 <h1><%= t(".title") %></h1>
 
-<table>
-  <tbody class="programmes">
-    <% @programmes.each do |programme| %>
-      <tr>
-        <td class="firstcol"><%= programme.name %></td>
-        <td><%= programme.created_at.strftime("%a %d %b") %></td>
-        <td><%= link_to t(".show"), programme, class: "button" %></td>
-        <td><%= link_to t(".edit"), edit_programme_path(programme), class: "button" %></td>
-        <td><%= link_to t(".destroy"), programme, method: :delete, data: { confirm: t(".confirm_delete") }, class: "button" %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if user_signed_in? %>
+  <!-- if current_user.user? -->
+
+  <table>
+    <tbody class="programmes">
+      <% @programmes.each do |programme| %>
+        <tr>
+          <td class="firstcol"><%= programme.name %></td>
+          <td><%= programme.created_at.strftime("%a %d %b") %></td>
+          <td><%= link_to t(".show"), programme, class: "button" %></td>
+          <td><%= link_to t(".edit"), edit_programme_path(programme), class: "button" %></td>
+          <td><%= link_to t(".destroy"), programme, method: :delete, data: { confirm: t(".confirm_delete") }, class: "button" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<% end %>
 
 <br>
 
-<%= link_to t(".new"), new_programme_path %>
+<%= link_to t(".new"), new_programme_path, class: "button" %>

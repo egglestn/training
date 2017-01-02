@@ -29,7 +29,6 @@ en:
   users:
     login: "Log in"
     logout: "Log out"
-    profile: "Edit profile"
     register: "Sign up"
   programmes:
     index:
@@ -61,6 +60,15 @@ en:
       reps: "Reps"
       tempo: "Tempo"
       kit: "Kit"
+  users:
+    success:
+      create: "User was successfully created"
+      update: "User was successfully updated"
+      destroy: "User was successfully deleted"
+    edit:
+      title: "Edit profile"
+    profile:
+      edit: "Edit profile"
 
   activerecord:
     models:
