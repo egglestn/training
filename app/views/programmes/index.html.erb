@@ -17,11 +17,7 @@
   </table>
 
 <% elsif current_user && (current_user.role == "admin") %>
-  <h1><%= t(".manage") %></h1>
-    TODO
-
+    <%= render 'users/index' %>
+    <br>
+    <%= link_to t(".new"), new_programme_path(user: current_user), class: "button" %>
 <% end %>
-
-<br>
-
-<%= link_to t(".new"), new_programme_path, class: "button" %>

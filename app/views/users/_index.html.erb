@@ -1,0 +1,33 @@
+<% @users = User.all %>
+
+<h1><%= t(".manage") %></h1>
+
+<table>
+  <thead>
+    <th>
+      <%= t("users.index.firstname") %>
+    </th>
+    <th>
+      <%= t("users.index.lastname") %>
+    </th>
+    <th>
+      <%= t(".email") %>
+    </th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.first_name %>
+        </td>
+        <td>
+          <%= user.last_name %>
+        </td>
+        <td>
+          <%= link_to user.email, new_programme_path(user: user) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

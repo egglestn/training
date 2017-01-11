@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   enum role: [:guest, :admin]
 
+  has_many :programmes, inverse_of: :user
+
   def self.human_enum_name(enum_name, enum_value)
     I18n.t("activerecord.attributes.user.#{enum_name.to_s.pluralize}.#{enum_value}")
   end

@@ -26,13 +26,12 @@ en:
   guest: "User"
   admin: "Admin"
 
+  manage: "Manage 1"
+
   layouts:
     application:
       head_title: "Training"
-  users:
-    login: "Log in"
-    logout: "Log out"
-    register: "Sign up"
+
   programmes:
     index:
       title: "My programmes"
@@ -57,6 +56,7 @@ en:
       show: "Show"
       back: "Back"
     form:
+      pname: "Programme name"
       title: "Exercises"
       name: "Exercise name"
       link: "Link"
@@ -64,6 +64,7 @@ en:
       reps: "Reps"
       tempo: "Tempo"
       kit: "Kit"
+      new: "New programme for %{name}"
   users:
     success:
       create: "User was successfully created"
@@ -73,6 +74,11 @@ en:
       title: "Edit profile"
     profile:
       edit: "Edit profile"
+    index:
+      manage: "Manage programmes"
+      firstname: "First name"
+      lastname: "Last name"
+      email: "Email address"
 
   activerecord:
     models:
