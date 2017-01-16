@@ -3,12 +3,13 @@
 }
 
 input[type=submit], .button {
-  background-color: $button-blue;
-  color: $white;
-  border: none;
-  padding: $padding-default;
+  background-color: $white;
+  color: $dark-grey;
+  border: solid;
+  border-color: $light-grey;
+  border-width: 1px;
+  padding: 8px;
   border-radius: 5px;
-  margin-bottom: $padding-large;
 }
 
 input[type=text], select {
@@ -21,4 +22,12 @@ input[type=text], select {
 
 textarea:focus, input:focus{
   outline: none;
+}
+
+.footer {
+  margin-top: 15px;
+}
+
+.right {
+  float: right;
 }

@@ -1,13 +1,6 @@
 
 <%= simple_form_for @programme do |f| %>
 
-  <h1>
-    <%= t(".new", name: @user.email) %>
-    <!-- t(".new") -->
-  </h1>
-
-  <%= @programme.customer_id %>
-
   <% if @programme.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
@@ -25,9 +18,7 @@
     <%= f.text_field :name %>
   </div>
 
-  <%= f.text_field :customer_id %>
-
-  <h2><%= t(".title") %></h2>
+  <!-- f.text_field :customer_id -->
 
   <table class="exercises">
     <thead>
@@ -54,7 +45,8 @@
     </tbody>
   </table>
 
-  <div class="actions">
+  <div class="footer right">
     <%= f.submit %>
   </div>
+
 <% end %>

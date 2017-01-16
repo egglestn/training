@@ -40,6 +40,10 @@ en:
       edit: "Edit"
       destroy: "Destroy"
       new: "New programme"
+    programmes:
+      name: "Name"
+      start: "Start date"
+      actions: "Actions"
       confirm_delete: "Are you sure you want to delete this programme?"
     show:
       title: "My programme"
@@ -52,12 +56,13 @@ en:
       tempo: "Tempo"
       kit: "Kit"
     edit:
-      title: "Editing programme"
+      title: "Editing programme for %{name}"
       show: "Show"
       back: "Back"
+    new:
+      title: "New programme for %{name}"
     form:
       pname: "Programme name"
-      title: "Exercises"
       name: "Exercise name"
       link: "Link"
       notes: "Notes"
