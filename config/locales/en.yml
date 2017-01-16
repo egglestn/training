@@ -35,7 +35,7 @@ en:
   programmes:
     index:
       title: "My programmes"
-      manage: "Manage programmes"
+      manage: "Manage users"
       show: "Show"
       edit: "Edit"
       destroy: "Destroy"
@@ -78,7 +78,7 @@ en:
       manage: "Manage programmes"
       firstname: "First name"
       lastname: "Last name"
-      email: "Email address"
+      email: "Create programme for"
 
   activerecord:
     models:

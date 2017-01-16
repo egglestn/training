@@ -3,7 +3,7 @@ class ProgrammesController < ApplicationController
 
   def index
     # @programmes = Programme.all
-    @programmes = current_user.programmes
+    @programmes = current_user.programmes if current_user
   end
 
   def new
