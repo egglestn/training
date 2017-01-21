@@ -24,7 +24,7 @@
           <%= user.last_name %>
         </td>
         <td>
-          <%= link_to user.email, new_programme_path(user: user) %>
+          <%= link_to user.email, new_user_programme_path(user) %>
         </td>
       </tr>
     <% end %>

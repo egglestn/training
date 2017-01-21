@@ -9,43 +9,30 @@ class ProgrammesController < ApplicationController
   def new
 
     @programme = Programme.new
+    @user = User.find(params[:user_id])
 
-    @programme.customer_id = params[:user]
-    @user = User.find(params[:user])
-    #@user = User.find(1)
-
-    6.times { @programme.exercises.build }
+    6.times { @programme.exercises.build } unless @programme.exercises.length.positive?
   end
 
   def edit
-    6.times { @programme.exercises.build } unless @programme.exercises[0]
+    @user = User.find(@programme.user_id)
+    6.times { @programme.exercises.build } unless @programme.exercises.length.positive?
   end
 
   def create
-    @programme = Programme.new(programme_params)
-    puts "-----------------"
-    puts @programme.customer_id
-    puts @programme.user_id
-    puts "-----------------"
-    @programme.user_id = @programme.customer_id
+    @programme = Programme.create(user_id: params[:user_id])
+    @user = User.find(params[:user_id])
 
     if @programme.save
-      redirect_to @programme, notice: 'Programme and exercises successfully created.'
+      redirect_to user_programme_path(@user, @programme), notice: 'Programme and exercises successfully created.'
     else
-      puts "================="
-      puts "Renewing"
-      puts @programme.customer_id
-      puts programme_params[:customer_id]
-      puts "================="
-
-      @user = User.find(1)
       render :new
     end
   end
 
   def update
     if @programme.update(programme_params)
-      redirect_to @programme, notice: 'Programme was successfully updated.'
+      redirect_to [@programme.user, @programme], notice: 'Programme was successfully updated.'
     else
       render :edit
     end

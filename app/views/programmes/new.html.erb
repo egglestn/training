@@ -1,7 +1,7 @@
 <h1><%= t(".title", name: @user.email) %></h1>
 
-<%= render 'form', programme: @programme, user: @user %>
+<%= render 'form' %>
 
 <div class="footer">
-  <%= link_to 'Back', programmes_path, class: "button" %>
+  <%= link_to 'Back', user_programmes_path(@user), class: "button" %>
 </div>

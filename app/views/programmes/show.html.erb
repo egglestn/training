@@ -33,5 +33,5 @@
   <% end %>
 </table>
 
-<%= link_to t(".edit"), edit_programme_path(@programme) %> |
-<%= link_to t(".back"), programmes_path %>
+<%= link_to t(".edit"), edit_user_programme_path(@programme.user, @programme) %> |
+<%= link_to t(".back"), user_programmes_path(@programme.user) %>

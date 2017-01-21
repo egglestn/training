@@ -1,5 +1,4 @@
-
-<%= simple_form_for @programme do |f| %>
+<%= simple_form_for ([@user, @programme]) do |f| %>
 
   <% if @programme.errors.any? %>
     <div id="error_explanation">
