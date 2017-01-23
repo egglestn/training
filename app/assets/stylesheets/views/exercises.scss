@@ -14,6 +14,16 @@
     padding: $padding-small;
   }
 
+  td {
+    font-size: 12px;
+    padding: $padding-small;
+    max-width: 180px;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
   .notes {
     input {
       width: 97%;

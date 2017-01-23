@@ -23,13 +23,15 @@
   <% @programme.exercises.each do | ex | %>
     <tr>
       <td><%= ex.name %></td>
-      <td><%= ex.link %></td>
+      <td><%= video_tag ex.link, size: "120x60", controls: true %></td>
       <td><%= ex.reps %> <%= ex.tempo %></td>
       <td><%= ex.kit %></td>
     </tr>
-    <tr>
-      <td colspan="4"><%= ex.notes %></td>
-    </tr>
+    <% if ex.notes? %>
+      <tr>
+        <td colspan="4"><span class="strong">Notes: </span><%= ex.notes %></td>
+      </tr>
+    <% end %>
   <% end %>
 </table>
 
