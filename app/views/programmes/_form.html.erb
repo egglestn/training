@@ -1,10 +1,11 @@
-<%= form_for(programme) do |f| %>
-  <% if programme.errors.any? %>
+<%= simple_form_for ([@user, @programme]) do |f| %>
+
+  <% if @programme.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
+      <h2><%= pluralize(@programme.errors.count, "error") %> prohibited this programme from being saved:</h2>
 
       <ul>
-      <% programme.errors.full_messages.each do |message| %>
+      <% @programme.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
@@ -12,18 +13,39 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %>
+    <%= label_tag t(".pname") %>
     <%= f.text_field :name %>
   </div>
 
-  <h2>Exercises</h2>
-  <div>
-    <%= f.fields_for :exercisesTODODelete do |builder| %>
-        <%= render "exercises_fields", :f => builder %>
-    <% end %>
-  </div>
+  <!-- f.text_field :customer_id -->
 
-  <div class="actions">
+  <table class="exercises">
+    <thead>
+    <tr>
+      <th>
+        <%= label_tag t(".name") %>
+      </th>
+      <th>
+        <%= label_tag t(".link") %>
+      </th>
+      <th class="separate">
+        <%= label_tag t(".reps") %> <%= label_tag t(".tempo") %>
+      </th>
+      <th>
+        <%= label_tag t(".kit") %>
+      </th>
+    </tr>
+    </thead>
+
+    <tbody>
+      <%= f.fields_for :exercises do |builder| %>
+          <%= render "exercises_fields", :f => builder %>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="footer right">
     <%= f.submit %>
   </div>
+
 <% end %>

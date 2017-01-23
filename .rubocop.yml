@@ -1,12 +1,17 @@
 AllCops:
   Excludes:
-    - config/
-    - initializers/*.rb
-    - environments/*.rb
+    - config/puma.rb
+    - db/**
+    - db/migrate/**
+    - config/initializers/*.rb
+    - config/environments/*.rb
     - Berksfile
     - recipes/basic.rb
     - attributes/*.rb
     - puma.rb
+
+Rails:
+ Enabled: true
 
 # Customize rules
 Metrics/LineLength:
@@ -21,3 +26,5 @@ Metrics/AbcSize:
 BlockLength:
   Max: 70
 
+Documentation:
+    Enabled: false
