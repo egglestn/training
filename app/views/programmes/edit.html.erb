@@ -1,6 +1,4 @@
-<h1>Editing Programme</h1>
+<h1><%= t(".title", name: @programme.user.email) %></h1>
 
-<%= render 'form', programme: @programme %>
+<%= render 'form' %>
 
-<%= link_to 'Show', @programme %> |
-<%= link_to 'Back', programmes_path %>
