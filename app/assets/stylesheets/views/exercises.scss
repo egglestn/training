@@ -1,0 +1,44 @@
+// Place all the styles related to the exercises controller here.
+// They will automatically be included in application.scss.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.exercises {
+
+  tr {
+    height: $row-height;
+    background-color: $primary-green
+  }
+
+  th {
+    text-align: left;
+    padding: $padding-small;
+  }
+
+  td {
+    font-size: 12px;
+    padding: $padding-small;
+    max-width: 180px;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+
+  .notes {
+    input {
+      width: 97%;
+    }
+  }
+
+  .half {
+    width: 90px;
+  }
+
+  .separate label:first-child {
+      margin-right: 76px;
+  }
+
+  .right {
+    float: right;
+  }
+}

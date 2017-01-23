@@ -1,5 +1,7 @@
-<h1>New Programme</h1>
+<h1><%= t(".title", name: @user.email) %></h1>
 
-<%= render 'form', programme: @programme %>
+<%= render 'form' %>
 
-<%= link_to 'Back', programmes_path %>
+<div class="footer">
+  <%= link_to 'Back', user_programmes_path(@user), class: "button" %>
+</div>

@@ -20,4 +20,78 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  title: "Optimum function holistic coaching"
+  welcome: "Welcome %{name}"
+
+  guest: "User"
+  admin: "Admin"
+
+  manage: "Manage 1"
+
+  layouts:
+    application:
+      head_title: "Training"
+
+  programmes:
+    index:
+      title: "My programmes"
+      manage: "Manage users"
+      show: "Show"
+      edit: "Edit"
+      destroy: "Destroy"
+      new: "New programme"
+    programmes:
+      name: "Name"
+      start: "Start date"
+      actions: "Actions"
+      confirm_delete: "Are you sure you want to delete this programme?"
+    show:
+      title: "My programme"
+      edit: "Edit"
+      back: "Back"
+      name: "Exercise name"
+      link: "Link"
+      notes: "Notes"
+      reps: "Reps"
+      tempo: "Tempo"
+      kit: "Kit"
+    edit:
+      title: "Editing programme for %{name}"
+      show: "Show"
+      back: "Back"
+    new:
+      title: "New programme for %{name}"
+    form:
+      pname: "Programme name"
+      name: "Exercise name"
+      link: "Link"
+      notes: "Notes"
+      reps: "Reps"
+      tempo: "Tempo"
+      kit: "Kit"
+      new: "New programme for %{name}"
+  users:
+    success:
+      create: "User was successfully created"
+      update: "User was successfully updated"
+      destroy: "User was successfully deleted"
+    edit:
+      title: "Edit profile"
+    profile:
+      edit: "Edit profile"
+    index:
+      manage: "Manage programmes"
+      firstname: "First name"
+      lastname: "Last name"
+      email: "Create programme for"
+
+  activerecord:
+    models:
+      user: User
+      programme: Programme
+
+    attributes:
+      user:
+      profile:
+      programme:
+

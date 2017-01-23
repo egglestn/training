@@ -2,25 +2,29 @@ class ProgrammesController < ApplicationController
   before_action :set_programme, only: [:show, :edit, :update, :destroy]
 
   def index
-    @programmes = Programme.all
-  end
-
-  def show
+    # @programmes = Programme.all
+    @programmes = current_user.programmes if current_user
   end
 
   def new
+
     @programme = Programme.new
-    6.times { exercise = @programme.exercises.build }
+    @user = User.find(params[:user_id])
+
+    6.times { @programme.exercises.build } unless @programme.exercises.length.positive?
   end
 
   def edit
+    @user = User.find(@programme.user_id)
+    6.times { @programme.exercises.build } unless @programme.exercises.length.positive?
   end
 
   def create
-    @programme = Programme.new(programme_params)
-    @programme.user = current_user
+    @programme = Programme.create(user_id: params[:user_id])
+    @user = User.find(params[:user_id])
+
     if @programme.save
-      redirect_to @programme, notice: 'Programme and exercisesTODODelete successfully created.'
+      redirect_to user_programme_path(@user, @programme), notice: 'Programme and exercises successfully created.'
     else
       render :new
     end
@@ -28,7 +32,7 @@ class ProgrammesController < ApplicationController
 
   def update
     if @programme.update(programme_params)
-      redirect_to @programme, notice: 'Programme was successfully updated.'
+      redirect_to [@programme.user, @programme], notice: 'Programme was successfully updated.'
     else
       render :edit
     end
@@ -40,21 +44,22 @@ class ProgrammesController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_programme
-      @programme = Programme.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def programme_params
-      params.require(:programme).permit(:name, exercises_attributes:
-        [ :id,
-          :name,
-          :link,
-          :notes,
-          :reps,
-          :tempo,
-          :kit
-        ])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_programme
+    @programme = Programme.find(params[:id])
+  end
+
+  # Never trust parameters from the scary internet, only allow the white list through.
+  def programme_params
+    params.require(:programme).permit(:name, :customer_id,
+               exercises_attributes:
+                  [:id,
+                   :name,
+                   :link,
+                   :notes,
+                   :reps,
+                   :tempo,
+                   :kit])
+  end
 end

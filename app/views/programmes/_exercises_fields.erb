@@ -1,31 +1,24 @@
+<tr>
+  <td class="field">
+    <%= f.text_field :name %>
+  </td>
 
-<div class="field">
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-</div>
+  <td class="field">
+    <%= f.text_field :link %>
+  </td>
 
-<div class="field">
-  <%= f.label :link %>
-  <%= f.text_field :link %>
-</div>
+  <td class="field">
+    <%= f.text_field :reps, class: "half" %>
+    <%= f.text_field :tempo,class: "half" %>
+  </td>
 
-<div class="field">
-  <%= f.label :notes %>
-  <%= f.text_field :notes %>
-</div>
+  <td class="field">
+    <%= f.text_field :kit %>
+  </td>
+</tr>
 
-<div class="field">
-  <%= f.label :reps %>
-  <%= f.text_field :reps %>
-</div>
-
-<div class="field">
-  <%= f.label :tempo %>
-  <%= f.text_field :tempo %>
-</div>
-
-<div class="field">
-  <%= f.label :kit %>
-  <%= f.text_field :kit %>
-</div>
-
+<tr>
+  <td class="field notes" colspan="5">
+    <%= f.text_field :notes %>
+  </td>
+</tr>

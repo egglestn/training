@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Training</title>
+    <title><%= t(".head_title") %></title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -9,22 +9,34 @@
   </head>
 
   <body>
+    <div class="navbar">
+      <div class="pull-right">
+        <% if user_signed_in? %>
+            <strong><%= current_user.email %></strong>
+            <br>
+            <%= t("welcome", name: current_user.first_name) %>
+            <br>
+            <%= link_to t("users.profile.edit"), edit_user_path(current_user), class: 'navbar-link' %> |
+            <%= link_to t("users.logout"), destroy_user_session_path, method: :delete, class: 'navbar-link'  %>
+        <% else %>
+            <%= link_to t("users.register"), new_user_registration_path, class: 'navbar-link'  %> |
+            <%= link_to t("users.login"), new_user_session_path, class: 'navbar-link'  %>
+        <% end %>
+      </div>
+      <div>
+        <div class="header-title">
+          <%= t("title") %>
+        </div>
+        <%= image_tag "logo_header", class: 'header-img' %>
+     </div>
+    </div>
+
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
+        <p class="alert alert-danger"><%= alert %></p>
     <% end %>
-
-    <p class="navbar-text pull-right">
-      <% if user_signed_in? %>
-          Logged in as <strong><%= current_user.email %></strong>.
-          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-      <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
-      <% end %>
 
   <%= yield %>
   </body>
