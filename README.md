@@ -1,24 +1,17 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+PT Enhance training app
 
-Things you may want to cover:
+To see it live, visit https://ptenhance.herokuapp.com/
 
-* Ruby version
+### TODO / needs investigating
 
-* System dependencies
+* Disable admin rights (except for admins)
+* Video support for other browsers
+* Add vs create new exercise?
+* Logo file gone missing on heroku
+* Strange CSS of programme right-hand end
+* Don't have reps and tempo share a column, there must be a better way!
+* Make update button more obvious
+* Shocking size of video controls
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
