@@ -23,7 +23,7 @@
   <% @programme.exercises.each do | ex | %>
     <tr>
       <td><%= ex.name %></td>
-      <td><%= video_tag ex.link, size: "120x60", controls: true %></td>
+      <td><%= video_tag ex.link, width: "150", controls: true %></td>
       <td><%= ex.reps %> <%= ex.tempo %></td>
       <td><%= ex.kit %></td>
     </tr>
