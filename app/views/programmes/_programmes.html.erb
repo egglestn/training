@@ -13,7 +13,9 @@
       <td class="firstcol"><%= link_to programme.name, [programme.user, programme] %></td>
       <td><%= programme.created_at.strftime("%a %d %b") %></td>
       <td><%= link_to "", [programme.user, programme], class: "button fa fa-eye" %></td>
-      <td><%= link_to "", edit_user_programme_path(programme.user, programme), class: "button fa fa-pencil" %></td>
+      <% if current_user && (current_user.role == "admin") %>
+        <td><%= link_to "", edit_user_programme_path(programme.user, programme), class: "button fa fa-pencil" %></td>
+      <% end %>
       <td><%= link_to "", [programme.user, programme], method: :delete, data: { confirm: t(".confirm_delete") }, class: "button fa fa-trash" %></td>
     </tr>
   <% end %>

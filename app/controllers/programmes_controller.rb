@@ -3,11 +3,11 @@ class ProgrammesController < ApplicationController
 
   def index
     @users = User.all
-    @programmes = current_user.programmes if current_user
+    # @programmes = current_user.programmes if current_user
+    @programmes = Programme.where(user_id: current_user.id) if current_user
   end
 
   def new
-
     @programme = Programme.new
     @user = User.find(params[:user_id])
 
@@ -20,8 +20,9 @@ class ProgrammesController < ApplicationController
   end
 
   def create
-    @programme = Programme.create(user_id: params[:user_id])
     @user = User.find(params[:user_id])
+    @programme = Programme.new(programme_params)
+    @programme.user_id = params[:user_id]
 
     if @programme.save
       redirect_to user_programme_path(@user, @programme), notice: 'Programme and exercises successfully created.'
