@@ -21,11 +21,6 @@
     <%= f.text_field :last_name %>
   </div>
 
-  <div class="field">
-    <%= f.label User.human_attribute_name("role") %>
-    <%= f.select :role, roles_collection, include_blank: false, label: false %>
-  </div>
-
   <div class="actions">
     <%= f.submit %>
   </div>
