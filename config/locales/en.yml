@@ -70,6 +70,11 @@ en:
       tempo: "Tempo"
       kit: "Kit"
       new: "New programme for %{name}"
+    users:
+      manage: "Manage programmes"
+      firstname: "First name"
+      lastname: "Last name"
+      email: "Create programme for"
   users:
     success:
       create: "User was successfully created"
@@ -80,10 +85,7 @@ en:
     profile:
       edit: "Edit profile"
     index:
-      manage: "Manage programmes"
-      firstname: "First name"
-      lastname: "Last name"
-      email: "Create programme for"
+      admin: "Administer users"
 
   activerecord:
     models:

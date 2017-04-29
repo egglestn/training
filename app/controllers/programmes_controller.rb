@@ -2,7 +2,7 @@ class ProgrammesController < ApplicationController
   before_action :set_programme, only: [:show, :edit, :update, :destroy]
 
   def index
-    # @programmes = Programme.all
+    @users = User.all
     @programmes = current_user.programmes if current_user
   end
 

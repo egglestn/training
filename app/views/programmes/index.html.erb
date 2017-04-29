@@ -5,7 +5,7 @@
   <%= render 'programmes' %>
 
 <% elsif current_user && (current_user.role == "admin") %>
-    <%= render 'users/index' %>
+    <%= render 'users' %>
     <br>
     <!-- link_to t(".new"), new_programme_path(user: current_user), class: "button" -->
 <% end %>

@@ -1,0 +1,30 @@
+<h2><%= t(".admin") %></h2>
+
+<table class="users">
+  <thead>
+    <th>
+      <%= t("users.index.firstname") %>
+    </th>
+    <th>
+      <%= t("users.index.lastname") %>
+    </th>
+    <th>
+      <%= t(".edit") %>
+    </th>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td>
+          <%= user.first_name %>
+        </td>
+        <td>
+          <%= user.last_name %>
+        </td>
+        <td>
+          <%= link_to user.email, edit_user_path(user) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

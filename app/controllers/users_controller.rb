@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   def edit; end
 
+  def index
+    @users = User.all
+  end
+
   def update
     if current_user.update(user_params)
       redirect_to root_path, notice: t('.success.update', name: current_user.email)
