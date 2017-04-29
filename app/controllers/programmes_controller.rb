@@ -2,9 +2,7 @@ class ProgrammesController < ApplicationController
   before_action :set_programme, only: [:show, :edit, :update, :destroy]
 
   def index
-    @users = User.all
-    # @programmes = current_user.programmes if current_user
-    @programmes = Programme.where(user_id: current_user.id) if current_user
+    @user = User.find(params[:user_id])
   end
 
   def new

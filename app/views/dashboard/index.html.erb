@@ -1,0 +1,10 @@
+
+<% if current_user && (current_user.role == "guest") %>
+  <h1><%= t(".title") %></h1>
+
+  <%= render 'programmes/programmes' %>
+
+<% elsif current_user && (current_user.role == "admin") %>
+  <%= render 'programmes/users' %>
+  <br>
+<% end %>

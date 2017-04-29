@@ -34,12 +34,14 @@ en:
 
   programmes:
     index:
-      title: "My programmes"
+      title: "Programmes for %{email}"
       manage: "Manage users"
+      name: "Name"
       show: "Show"
       edit: "Edit"
       destroy: "Destroy"
-      new: "New programme"
+      actions: "Actions"
+      new: "Create new programme"
     programmes:
       name: "Name"
       start: "Start date"
@@ -71,7 +73,7 @@ en:
       kit: "Kit"
       new: "New programme for %{name}"
     users:
-      manage: "Manage programmes"
+      manage: "Manage programmes for users"
       firstname: "First name"
       lastname: "Last name"
       email: "Create programme for"

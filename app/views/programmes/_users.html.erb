@@ -9,7 +9,7 @@
       <%= t("users.index.lastname") %>
     </th>
     <th>
-      <%= t(".email") %>
+      <%= t(".manage") %>
     </th>
   </thead>
   <tbody>
@@ -22,7 +22,7 @@
           <%= user.last_name %>
         </td>
         <td>
-          <%= link_to user.email, new_user_programme_path(user) %>
+          <%= link_to user.email, user_programmes_path(user), user: user %>
         </td>
       </tr>
     <% end %>

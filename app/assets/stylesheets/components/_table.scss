@@ -1,0 +1,23 @@
+table {
+  tr {
+    height: $row-height;
+
+    th {
+      background-color: $lightest-grey;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+
+    td {
+      font-size: $small-font;
+      color: $dark-grey;
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  }
+
+  .firstcol {
+    font-weight: bold;
+    font-size: $medium-font;
+  }
+}

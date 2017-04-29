@@ -7,6 +7,6 @@ Rails.application.routes.draw do
     resources :programmes
   end
 
-  get '/', to: 'programmes#index'
-  root to: 'programmes#index'
+  get '/', to: 'dashboard#index'
+  root to: 'dashboard#index'
 end

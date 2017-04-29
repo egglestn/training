@@ -1,11 +1,20 @@
+<h2><%= t(".title", email: @user.email) %></h2>
 
-<% if current_user && (current_user.role == "guest") %>
-  <h1><%= t(".title") %></h1>
+<table>
+  <tr>
+    <th><%= t(".name") %></th>
+    <th><%= t(".edited") %></th>
+    <th><%= t(".actions") %></th>
+  </tr>
+  <% @user.programmes.each do | programme | %>
+    <tr>
+      <td><%= programme.name %></td>
+      <td><%= programme.updated_at.strftime("%d/%m/%y") %></td>
+      <td><%= link_to "", edit_user_programme_path(@user, programme), class: "button fa fa-pencil" %></td>
+    </tr>
+  <% end %>
+</table>
 
-  <%= render 'programmes' %>
-
-<% elsif current_user && (current_user.role == "admin") %>
-    <%= render 'users' %>
-    <br>
-    <!-- link_to t(".new"), new_programme_path(user: current_user), class: "button" -->
-<% end %>
+<div class="footer">
+  <%= link_to t(".new"), new_user_programme_path(@user), class: "button" %>
+</div>
